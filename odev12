@@ -1,0 +1,2 @@
+4. Sorunun Cevabı: SELECT customer.first_name, customer.last_name, COUNT(*) AS "Alışveriş Sayısı" FROM customer INNER JOIN payment ON customer.customer_id = payment.customer_id GROUP BY customer.customer_id HAVING COUNT(*)=(SELECT COUNT(*) AS "Alışveriş Sayısı" FROM payment GROUP BY customer_id ORDER BY "Alışveriş Sayısı" DESC LIMIT 1);
+
